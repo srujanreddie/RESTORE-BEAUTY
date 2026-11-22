@@ -1,0 +1,6 @@
+{
+  "name": "Restore Beauty Salon For Women",
+  "description": "CIDESCO International Certified, 100% women-only beauty salon and wellness studio in Pragathi Nagar, Kukatpally, Hyderabad.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

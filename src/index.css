@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Syncopate", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-cream: #FFF5EC;
+  --color-peach: #FFCE8A;
+  --color-navy: #1E2952;
+  --color-coral: #F0784A;
+  --color-coral-hover: #DC6336;
+  --color-charcoal: #1A1A1A;
+  --color-slate-body: #555555;
+  --color-dropzone: #F5E6D8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: #FFF5EC;
+    color: #1A1A1A;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+}
+
+@keyframes salon-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-salon-marquee {
+  display: flex;
+  width: max-content;
+  animation: salon-marquee 28s linear infinite;
+}
+
+.animate-salon-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-salon-marquee {
+    animation: none;
+  }
+}

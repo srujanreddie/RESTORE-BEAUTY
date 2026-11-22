@@ -232,8 +232,8 @@ export const salonData: SalonData = {
     {
       id: 'instagram',
       label: 'Instagram',
-      handle: '@restorebeautysalonforwomen',
-      href: 'https://instagram.com/restorebeautysalonforwomen',
+      handle: 'Restore Beauty Salon For Women',
+      href: 'https://www.instagram.com/popular/restore-beauty-salon-for-women-hyderabad/',
     },
     {
       id: 'whatsapp',

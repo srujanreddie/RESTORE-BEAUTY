@@ -17,7 +17,7 @@ export function CountUp({
   className = '',
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement | null>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.25 });
+  const isInView = useInView(ref, { once: true, amount: 'some' });
   const prefersReducedMotion = useReducedMotion();
   const [displayValue, setDisplayValue] = useState<number>(
     prefersReducedMotion ? target : 0

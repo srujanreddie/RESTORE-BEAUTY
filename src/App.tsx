@@ -33,7 +33,7 @@ export default function App() {
       window.history.pushState({}, '', normalized);
     }
     setRoute(normalized);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   }, []);
 
   useEffect(() => {

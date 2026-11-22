@@ -39,7 +39,7 @@ export function SkewHeading({
     : {
         initial,
         whileInView: target,
-        viewport: { once: true, amount: 0.2 },
+        viewport: { once: true, amount: 'some' as const },
         transition,
       };
 

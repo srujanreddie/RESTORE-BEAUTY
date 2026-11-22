@@ -106,9 +106,9 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
             onMouseEnter={() => setMenuDropdownOpen(true)}
             onMouseLeave={() => setMenuDropdownOpen(false)}
           >
-            <button
-              type="button"
-              onClick={() => setMenuDropdownOpen((prev) => !prev)}
+            <a
+              href="/menu/women"
+              onClick={(e) => handleLinkClick(e, '/menu/women')}
               aria-expanded={menuDropdownOpen}
               aria-haspopup="menu"
               className={`inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.16em] whitespace-nowrap shrink-0 transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0784A] rounded ${
@@ -123,7 +123,7 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
                   menuDropdownOpen ? 'rotate-180' : ''
                 }`}
               />
-            </button>
+            </a>
 
             <AnimatePresence>
               {menuDropdownOpen && (

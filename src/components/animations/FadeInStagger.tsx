@@ -7,18 +7,18 @@ const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.1,
     },
   },
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.55,
       ease: EASE_SMOOTH,
     },
   },
@@ -32,17 +32,35 @@ const reducedItemVariants: Variants = {
 interface FadeInStaggerProps {
   children: React.ReactNode;
   className?: string;
+  immediate?: boolean;
 }
 
-export function FadeInStagger({ children, className = '' }: FadeInStaggerProps) {
+export function FadeInStagger({
+  children,
+  className = '',
+  immediate = false,
+}: FadeInStaggerProps) {
   const prefersReducedMotion = useReducedMotion();
+
+  if (prefersReducedMotion || immediate) {
+    return (
+      <motion.div
+        variants={containerVariants}
+        initial={prefersReducedMotion ? 'visible' : 'hidden'}
+        animate="visible"
+        className={className}
+      >
+        {children}
+      </motion.div>
+    );
+  }
 
   return (
     <motion.div
       variants={containerVariants}
-      initial={prefersReducedMotion ? 'visible' : 'hidden'}
+      initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 'some' }}
       className={className}
     >
       {children}
